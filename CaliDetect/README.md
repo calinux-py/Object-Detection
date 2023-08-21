@@ -1,4 +1,4 @@
-# GStreamer camera examples with Coral
+# GStreamer camera examples with Coral (CaliNux Version)
 
 This folder contains example code using [GStreamer](https://github.com/GStreamer/gstreamer) to
 obtain camera images and perform image classification and object detection on the Edge TPU.
@@ -19,49 +19,31 @@ USB/PCIe/M.2 Accelerator.
     https://www.tensorflow.org/lite/guide/python)). You can check which version is installed
     using the ```pip3 show tflite_runtime``` command.
 
-2.  Clone this Git repo onto your computer or Dev Board:
+2.  After downloading the CaliDetect repo, run these commands:
 
     ```
-    mkdir google-coral && cd google-coral
+    echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
 
-    git clone https://github.com/google-coral/examples-camera --depth 1
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+    sudo apt-get update
+
+    sudo apt-get install libedgetpu1-max
+
+    sudo apt-get install python3-pycoral
+
+    cd CaliDetect
+
+    chmod +x install_requirements.sh
+
+    ./install_requirements.sh
     ```
 
-3.  Download the models:
+3.  Run detection:
 
     ```
-    cd examples-camera
-
-    sh download_models.sh
+    python detect.py
     ```
-
-4.  Install the GStreamer libraries (if you're using the Coral Dev Board, you can skip this):
-
-    ```
-    cd gstreamer
-
-    bash install_requirements.sh
-    ```
-
-
-## Run the classification demo
-
-```
-python3 classify.py
-```
-
-By default, this uses the ```mobilenet_v2_1.0_224_quant_edgetpu.tflite``` model.
-
-You can change the model and the labels file using flags ```--model``` and ```--labels```.
-
-
-## Run the detection demo (SSD models)
-
-```
-python3 detect.py
-```
-
-Likewise, you can change the model and the labels file using ```--model``` and ```--labels```.
 
 By default, both examples use the attached Coral Camera. If you want to use a USB camera,
 edit the ```gstreamer.py``` file and change ```device=/dev/video0``` to ```device=/dev/video1```.
