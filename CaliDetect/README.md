@@ -39,7 +39,11 @@ USB/PCIe/M.2 Accelerator.
     ./install_requirements.sh
     ```
 
-3.  Run detection:
+3.  Change path for default_model_dir by editing detect.py:
+
+    By default, the script will not work until you change the path to your username directory.
+
+4.  Run detection:
 
     ```
     python detect.py
