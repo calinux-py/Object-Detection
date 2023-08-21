@@ -46,3 +46,7 @@ USB/PCIe/M.2 Accelerator.
 By default, both examples use the attached Coral Camera. If you want to use a USB camera,
 edit the ```gstreamer.py``` file and change ```device=/dev/video0``` to ```device=/dev/video1```.
 
+
+All rights to Google and Coral.AI.
+I love your products.
+
