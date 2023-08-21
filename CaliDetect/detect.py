@@ -37,7 +37,7 @@ def generate_svg(src_size, inference_box, objs, labels, text_lines):
     return svg.finish()
 
 def main():
-    default_model_dir = '/home/jwb/CaliDetect/'
+    default_model_dir = '/home/YOUR-USERNAME/Object-Detection/CaliDetect/'
     default_model = 'ssdlite_mobiledet_coco_qat_postprocess_edgetpu.tflite'
     default_labels = 'coco_labels.txt'
     parser = argparse.ArgumentParser()
