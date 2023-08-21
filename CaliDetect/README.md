@@ -22,20 +22,14 @@ USB/PCIe/M.2 Accelerator.
 2.  After downloading the CaliDetect repo, run these commands:
 
     ```
-    echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
-
+    echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list > /dev/null
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
+    
     sudo apt-get update
-
-    sudo apt-get install libedgetpu1-max
-
-    sudo apt-get install python3-pycoral
-
-    cd CaliDetect
-
+    sudo apt-get install -y libedgetpu1-max python3-pycoral
+    
+    cd Object-Detection/CaliDetect
     chmod +x install_requirements.sh
-
     ./install_requirements.sh
     ```
 
