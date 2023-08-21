@@ -1,7 +1,8 @@
 # GStreamer camera examples with Coral (CaliNux Version)
 
-This README has been edited since its original form. 
-These edits reflect a simpler version for those whom might not be familiar with the process.
+*This README has been edited since its original form. 
+These edits reflect a simpler version for those whom might not be familiar with the process.*
+
 
 This folder contains example code using [GStreamer](https://github.com/GStreamer/gstreamer) to
 obtain camera images and perform image classification and object detection on the Edge TPU.
