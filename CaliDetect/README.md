@@ -1,4 +1,6 @@
 # GStreamer camera examples with Coral (CaliNux Version)
+![](https://img.shields.io/badge/-Python-purple)
+
 
 *This README has been edited since its original form. 
 These edits reflect a simpler version for those whom might not be familiar with the process.*
